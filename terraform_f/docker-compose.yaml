@@ -1,0 +1,23 @@
+version: '3.7'
+services:
+  web:
+    image: "cr.yandex/crp8u6kdovktfamd8noa/nginx:10"
+    depends_on:
+    - bingo
+    restart: always
+    network_mode: "host"
+  bingo:
+    container_name: bingo
+    image: "cr.yandex/crp8u6kdovktfamd8noa/bingo:10"
+    restart: always
+    network_mode: "host"
+
+  unifiedagent:
+    container_name: unifiedagent
+    image: "cr.yandex/yc/unified-agent"
+    environment:
+        FOLDER_ID: b1g7n7r7sqst0vi1d64b
+    restart: always
+    network_mode: "host"
+    volumes:
+        - /ua:/etc/yandex/unified_agent/conf.d

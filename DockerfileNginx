@@ -1,0 +1,10 @@
+# Official Nginx image (Yes, in this article I always use the `latest`. Kill me!)
+FROM nginx:latest
+
+# Copy Nginx configuration file to the container
+RUN chown nginx:nginx /var/cache/nginx/
+COPY nginx.conf /etc/nginx/
+COPY nginx_bingo.conf /etc/nginx/conf.d
+
+# Expose port 8080
+EXPOSE 8080

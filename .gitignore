@@ -1,0 +1,11 @@
+authorized_key.json
+.idea
+data_db
+autocomplite.sh
+Итоговый проект.docx
+terraform
+terraform_f/.terraform
+terraform_f/tf_key.json
+terraform_f/terraform.tfstate
+terraform_f/terraform.tfstate.backup
+terraform_f/.terraform.lock.hcl

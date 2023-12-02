@@ -1,0 +1,17 @@
+version: '3.7'
+services:
+  psql:
+    container_name: db
+    image: postgres:14.1-alpine
+    restart: always
+    network_mode: "host"
+    expose:
+    - 5432
+    ports:
+    - 5432:5432
+    volumes:
+    - "./data_db:/var/lib/postgresql/data"
+    environment:
+        POSTGRES_USER: postgres
+        POSTGRES_PASSWORD: postgres
+        POSTGRES_DB: postgres
